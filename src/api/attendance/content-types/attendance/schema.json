@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendances",
+  "info": {
+    "singularName": "attendance",
+    "pluralName": "attendances",
+    "displayName": "Attendance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::student.student",
+      "inversedBy": "attendances"
+    },
+    "timestamp": {
+      "type": "date"
+    },
+    "studen_status": {
+      "type": "enumeration",
+      "enum": [
+        "presente",
+        "ausente",
+        "justificado",
+        "esperando"
+      ]
+    },
+    "device_id": {
+      "type": "string"
+    },
+    "raw_data": {
+      "type": "json"
+    }
+  }
+}
